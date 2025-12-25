@@ -1,1 +1,126 @@
+:root {
+    --bg-color: #f8fafc;
+    --primary-blue: #2c3e50;
+    --accent-blue: #3498db;
+    --gray-light: #e2e8f0;
+    --gray-medium: #94a3b8;
+    --success-green: #27ae60;
+    --locked-gray: #cbd5e1;
+    --text-dark: #1e293b;
+    --white: #ffffff;
+}
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 { font-weight: 600; margin-bottom: 0.5rem; }
+
+/* Barra de progreso */
+.progress-container {
+    max-width: 400px;
+    margin: 1rem auto;
+}
+.progress-bar {
+    background: rgba(255,255,255,0.2);
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+#progress-fill {
+    height: 100%;
+    background: var(--accent-blue);
+    width: 0%;
+    transition: width 0.5s ease;
+    border-radius: 5px;
+}
+
+/* Grid de la Malla */
+.malla-wrapper {
+    padding: 2rem;
+    overflow-x: auto; /* Permite scroll horizontal en móviles */
+}
+
+.malla-grid {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(200px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* Semestres */
+.semestre-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.semestre-title {
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Tarjetas de Ramos */
+.ramo-card {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--gray-medium);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.ramo-card:hover { transform: translateY(-3px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+/* Estado: Aprobado */
+.ramo-card.aprobado {
+    background-color: var(--success-green);
+    color: white;
+    border-left-color: #1e8449;
+    text-decoration: line-through;
+}
+
+/* Estado: Bloqueado */
+.ramo-card.bloqueado {
+    background-color: var(--locked-gray);
+    color: #64748b;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#reset-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#reset-btn:hover { background: rgba(255,255,255,0.1); }
