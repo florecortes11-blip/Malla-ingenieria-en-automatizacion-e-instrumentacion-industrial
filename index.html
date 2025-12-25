@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header>
+        <div class="header-content">
+            <h1>Malla Curricular</h1>
+            <p>Ingeniería en Automatización y Control</p>
+            <div class="progress-container">
+                <span>Progreso General: <span id="progress-text">0%</span></span>
+                <div class="progress-bar"><div id="progress-fill"></div></div>
+            </div>
+            <button id="reset-btn">Reiniciar Progreso</button>
+        </div>
+    </header>
+
+    <main class="malla-wrapper">
+        <div id="malla-grid" class="malla-grid">
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
